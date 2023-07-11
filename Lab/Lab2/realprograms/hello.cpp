@@ -11,5 +11,4 @@ getline(cin, school_Name);
 cout<<endl<<endl;
 cout<<"Your name is "<<name<<endl;
 cout<<"Your school's name is "<<school_Name<<endl;
-
 }
