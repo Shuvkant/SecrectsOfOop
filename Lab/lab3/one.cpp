@@ -12,10 +12,9 @@ private:
 public:
     void getdata()
     {
-        float temp;
         cout << "\nEnter temperature in fahrenheit:(°F) ";
-        cin >> temp;
-        tempInFah = temp;
+        cin >> tempInFah;
+        // tempInFah = temp;
         tempInCel = (((tempInFah - 32) * 5) / 9);
     }
     void showdata()
@@ -32,10 +31,10 @@ private:
 public:
     void getdata()
     {
-        float temp;
+        // float temp;
         cout << "\nEnter the temperature in Celcius (°C)";
-        cin >> temp;
-        tempInFah = ((9 * temp) / 5) + 32;
+        cin >> tempInFah;
+        tempInFah = ((9 * tempInFah) / 5) + 32;
     }
     void showdata()
     {
@@ -45,9 +44,10 @@ public:
 int main()
 {
     fahrenheit f1;
+    celcius c1;
     f1.getdata();
     f1.showdata();
-    celcius c1;
+
     c1.getdata();
     c1.showdata();
 }
