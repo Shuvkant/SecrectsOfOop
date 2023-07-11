@@ -1,41 +1,64 @@
 #include <iostream>
-// #include <cmath>
-#include<cmath>
+#include <math.h>
+using namespace std;
+class Primechecker
+{
+private:
+    int num;
 
-class primeNumber {
 public:
-    int testPrime(int n) {
-        if (n <= 1) {
-            return 0;
+    int flag;
+    // flag=0;
+    void setdata()
+    {
+        cout << "Enter any number: ";
+        cin >> num;
+    }
+    void checkPrime()
+    {
+        if (num <= 1)
+        {
+            flag = 0;
+            //   break;
         }
-        int sqrtN = sqrt(n);
-        for (int i = 2; i <= sqrtN; ++i) {
-            if (n % i == 0) {
-                return 0;
+        else
+        {
+            for (int i = 2; i <= sqrt(num); i++)
+            {
+                if (num % i == 0)
+                {
+                    flag = 0;
+                    break;
+                }
+                else
+                    flag = 1;
             }
         }
-        return 1;
+    }
+
+    void result()
+    {
+        if (flag == 0)
+        {
+            cout << num << " is not Prime Number" << endl;
+        }
+        else
+        {
+            cout << num << " is prime number:" << endl;
+        }
     }
 };
-
-int main() {
+int main()
+{
     char choice;
-    do {
-        int n;
-        std::cout << "Enter a number: ";
-        std::cin >> n;
-
-        primeNumber checker;
-        int testPrime = checker.testPrime(n);
-        if (testPrime) {
-            std::cout << n << " is prime.\n";
-        } else {
-            std::cout << n << " is not prime.\n";
-        }
-
-        std::cout << "Do you want to check another number? (y/n): ";
-        std::cin >> choice;
+    Primechecker ram;
+    do
+    {
+        ram.setdata();
+        ram.checkPrime();
+        ram.result();
+        cout << "Do you want to continue?(y/n)";
+        cin >> choice;
     } while (choice == 'y' || choice == 'Y');
-
     return 0;
 }
